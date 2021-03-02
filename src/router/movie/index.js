@@ -18,6 +18,10 @@ export default{
         {
             path:'Search',
             component : () =>  import('@/components/Search')
+        },
+        {
+            path:'CiList',
+            component : () =>  import('@/components/CiList')
         }
     ]
 }
