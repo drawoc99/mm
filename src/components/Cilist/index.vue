@@ -1,84 +1,15 @@
 <template>
     <div class="cinema_body">
 				<ul>
-					<li>
+					
+					<li v-for="item in CinemasList.slice(1)" :key="item.id">
 						<div>
-							<span>大地影院(澳东世纪店)</span>
-							<span class="q"><span class="price">22.9</span> 元起</span>
+							<span>{{item.name}}</span>
+							<span class="q"><span class="price"></span>38 元起</span>
 						</div>
-						<div class="address">
-							<span>金州区大连经济技术开发区澳东世纪3层</span>
-							<span>1763.5km</span>
-						</div>
-						<div class="card">
-                			<div>小吃</div>
-                			<div>折扣卡</div>
-       					</div>
-					</li>
-					<li>
-						<div>
-							<span>大地影院(澳东世纪店)</span>
-							<span class="q"><span class="price">22.9</span> 元起</span>
-						</div>
-						<div class="address">
-							<span>金州区大连经济技术开发区澳东世纪3层</span>
-							<span>1763.5km</span>
-						</div>
-						<div class="card">
-                			<div>小吃</div>
-                			<div>折扣卡</div>
-       					</div>
-					</li>
-					<li>
-						<div>
-							<span>大地影院(澳东世纪店)</span>
-							<span class="q"><span class="price">22.9</span> 元起</span>
-						</div>
-						<div class="address">
-							<span>金州区大连经济技术开发区澳东世纪3层</span>
-							<span>1763.5km</span>
-						</div>
-						<div class="card">
-                			<div>小吃</div>
-                			<div>折扣卡</div>
-       					</div>
-					</li>
-					<li>
-						<div>
-							<span>大地影院(澳东世纪店)</span>
-							<span class="q"><span class="price">22.9</span> 元起</span>
-						</div>
-						<div class="address">
-							<span>金州区大连经济技术开发区澳东世纪3层</span>
-							<span>1763.5km</span>
-						</div>
-						<div class="card">
-                			<div>小吃</div>
-                			<div>折扣卡</div>
-       					</div>
-					</li>
-					<li>
-						<div>
-							<span>大地影院(澳东世纪店)</span>
-							<span class="q"><span class="price">22.9</span> 元起</span>
-						</div>
-						<div class="address">
-							<span>金州区大连经济技术开发区澳东世纪3层</span>
-							<span>1763.5km</span>
-						</div>
-						<div class="card">
-                			<div>小吃</div>
-                			<div>折扣卡</div>
-       					</div>
-					</li>
-					<li>
-						<div>
-							<span>大地影院(澳东世纪店)</span>
-							<span class="q"><span class="price">22.9</span> 元起</span>
-						</div>
-						<div class="address">
-							<span>金州区大连经济技术开发区澳东世纪3层</span>
-							<span>1763.5km</span>
+						<div  class="address" >
+							<span>金牛区北二环路10号</span>
+							<span>500m</span>
 						</div>
 						<div class="card">
                 			<div>小吃</div>
@@ -86,14 +17,25 @@
        					</div>
 					</li>
 				</ul>
-			</div>
 		</div>
 </template>
 
 
 <script>
 export default {
-    name:'Cilist'
+    name:'CiList',
+	data(){
+		return{
+			CinemasList:[],
+			
+		}
+	},
+	mounted(){
+		this.axios.get('ajax/filterCinemas?ci=59&optimus_uuid=78519F10773111EB88D4C1535D48DC33F89ED6A423FF4486B695F95EA050054E&optimus_risk_level=71&optimus_code=10').then((res)=>{
+				this.CinemasList=res.data.brand.subItems;
+				
+		})
+	}
 }
 </script>
 

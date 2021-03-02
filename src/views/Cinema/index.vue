@@ -13,7 +13,7 @@
 					特色 <i class="iconfont icon-lower-triangle"></i>
 				</div>
 			</div>
-            <Cilist />
+            <CiList />
         </div>
         <TabBar />
         
@@ -23,13 +23,13 @@
 <script>
 import Header from '@/components/Header';
 import TabBar from '@/components/TabBar';
-import Cilist from '@/components/Cilist';
+import CiList from '@/components/CiList';
 export default {
     name:'Cinema',
     components :{
         Header,
         TabBar,
-        Cilist
+        CiList
     }
 }
 </script>

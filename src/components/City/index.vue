@@ -86,9 +86,16 @@
 
 
 
+ 
 <script>
 export default {
-    name:'City'
+	 name:'City',
+	 mounted(){
+		this.axios.get('/ajax/movieOnInfoList?token=&optimus_uuid=78519F10773111EB88D4C1535D48DC33F89ED6A423FF4486B695F95EA050054E&optimus_risk_level=71&optimus_code=10').then((res)=>{
+			console.log(res)
+			
+	})
+	 }
 }
 </script>
 
